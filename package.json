@@ -1,19 +1,27 @@
 {
   "name": "@pollinginc/polling-react-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React JS SDK Wrapper to intereact with Polling.com services",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm dist/* -rf && microbundle",
+    "dev": "microbundle watch"
   },
-  "author": "",
+  "type": "module",
+  "author": "Polling.com",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.3.12",
+    "microbundle": "^0.15.1",
     "react": "^18.3.1",
     "typescript": "^5.6.3"
   },
   "dependencies": {
     "@pollinginc/polling-sdk-js": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PollingInc/polling-sdk-react.git"
   }
 }
