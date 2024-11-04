@@ -1,6 +1,6 @@
 {
   "name": "@pollinginc/polling-react-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React JS SDK Wrapper to intereact with Polling.com services",
   "type": "module",
   "module": "dist/index.esm.js",
