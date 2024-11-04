@@ -2,11 +2,11 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { Polling, SdkPayload } from "@pollinginc/polling-sdk-js";
 
 export interface PollingSDKContextProps {
-    pollingSdk: Polling | null;
+    pollingSdk: Polling;
     logSession: () => void,
-    logPurchase: (cents: number) => void,
-    logEvent: (eventName: string, eventValue?: string | number) => Promise<void>,
-    showEmbedView: () => void,
+    logPurchase: (cents: number) => any,
+    logEvent: (eventName: string, eventValue?: string | number) => Promise<any>,
+    showEmbedView: () => any,
     showSurvey: (surveyUuid: string) => void,
 }
 
@@ -14,38 +14,23 @@ export interface PollingSDKProviderProps extends SdkPayload {
     children: React.ReactNode;
 }
 
-const PollingSDKContext = createContext<PollingSDKContextProps | undefined>({
-    pollingSdk: null,
-    logSession: () => { },
-    logPurchase: (cents) => { },
-    logEvent: async (eventName, eventValue) => { },
-    showEmbedView: () => { },
-    showSurvey: (surveyUuid) => { },
-});
+const PollingSDKContext = createContext<PollingSDKContextProps | undefined>({} as any);
 
 export function PollingSDKProvider({ children, ...props }: PollingSDKProviderProps) {
-    const [pollingSdk] = useState<Polling>(
+    const [pollingSdk, setSdk] = useState<Polling>(
         new Polling
     );
 
     useEffect(() => {
-        const initializeSDK = async () => {
-            await pollingSdk.initialize(props);
-        };
-
-        initializeSDK();
+        setSdk(pollingSdk.initialize(props));
     }, []);
 
     useEffect(() => {
-        if (pollingSdk) {
-            pollingSdk.setCustomerId(props.customerId);
-        }
+        setSdk(pollingSdk.setCustomerId(props.customerId));
     }, [props.customerId]);
 
     useEffect(() => {
-        if (pollingSdk) {
-            pollingSdk.setApiKey(props.apiKey);
-        }
+        setSdk(pollingSdk.setApiKey(props.apiKey));
     }, [props.apiKey]);
 
     return (
