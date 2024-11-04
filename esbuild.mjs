@@ -13,7 +13,7 @@ const shared = {
     minify: true,
     sourcemap: true,
     treeShaking: true,
-    platform: 'node',
+    platform: 'neutral',
     plugins: [nodeExternalsPlugin()],
 };
 

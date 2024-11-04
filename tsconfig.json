@@ -16,8 +16,9 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "emitDeclarationOnly": true,
-    "skipLibCheck": true
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true,
+    "declarationDir": "./dist"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
