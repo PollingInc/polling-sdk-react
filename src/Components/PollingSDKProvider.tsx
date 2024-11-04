@@ -8,6 +8,8 @@ export interface PollingSDKContextProps {
     logEvent: (eventName: string, eventValue?: string | number) => Promise<any>,
     showEmbedView: () => any,
     showSurvey: (surveyUuid: string) => void,
+    setApiKey: (apiKey: string) => void,
+    setCustomerId: (customerId: string) => void,
 }
 
 export interface PollingSDKProviderProps extends SdkPayload {
@@ -41,6 +43,8 @@ export function PollingSDKProvider({ children, ...props }: PollingSDKProviderPro
             logEvent: async (eventName, eventValue) => pollingSdk.logEvent(eventName, eventValue),
             showEmbedView: () => pollingSdk.showEmbedView(),
             showSurvey: (surveyUuid: string) => pollingSdk.showSurvey(surveyUuid),
+            setApiKey: (apiKey: string) => pollingSdk.setApiKey(apiKey),
+            setCustomerId: (customerId: string) => pollingSdk.setCustomerId(customerId),
         }}>
             {children}
         </PollingSDKContext.Provider>
