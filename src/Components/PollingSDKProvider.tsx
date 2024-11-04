@@ -36,11 +36,11 @@ export function PollingSDKProvider({ children, ...props }: PollingSDKProviderPro
     return (
         <PollingSDKContext.Provider value={{
             pollingSdk,
-            logSession: pollingSdk.logSession,
-            logPurchase: pollingSdk.logPurchase,
-            logEvent: pollingSdk.logEvent,
-            showEmbedView: pollingSdk.showEmbedView,
-            showSurvey: pollingSdk.showSurvey,
+            logSession: () => pollingSdk.logSession(),
+            logPurchase: (cents) => pollingSdk.logPurchase(cents),
+            logEvent: async (eventName, eventValue) => pollingSdk.logEvent(eventName, eventValue),
+            showEmbedView: () => pollingSdk.showEmbedView(),
+            showSurvey: (surveyUuid: string) => pollingSdk.showSurvey(surveyUuid),
         }}>
             {children}
         </PollingSDKContext.Provider>
