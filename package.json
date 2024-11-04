@@ -3,8 +3,8 @@
   "version": "1.0.2",
   "description": "React JS SDK Wrapper to intereact with Polling.com services",
   "type": "module",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && node esbuild.mjs"
   },
