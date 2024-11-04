@@ -1,1 +1,3 @@
-export { PollingSDKProvider, usePollingSDK, PollingSDKContextProps, PollingSDKProviderProps } from "./Components/PollingSDKProvider";
+export { PollingSDKProvider, usePollingSDK } from "./Components/PollingSDKProvider";
+
+export type { PollingSDKProviderProps, PollingSDKContextProps } from "./Components/PollingSDKProvider";

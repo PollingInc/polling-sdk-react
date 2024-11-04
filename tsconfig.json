@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
     "declaration": true,
-    "declarationMap": true, // Optional: Generates source maps for declarations
-    "emitDeclarationOnly": false, // Ensures .js and .d.ts files are both emitted
-    "module": "CommonJS",
-    "target": "ES6",
+    "declarationMap": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
     "strict": true,
-    "esModuleInterop": true
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
