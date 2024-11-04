@@ -6,6 +6,8 @@ This is a React library for interacting with Polling.com services, which was cre
 
 This SDK allows you to send events, log purchases, and display embedded survey pages or show a specific survey seamlessly within your React application.
 
+[Read more on our docs](https://docs.polling.com/integration/react-sdk)
+
 ## Installation
 
 To install the SDK, run the following command:
