@@ -1,6 +1,6 @@
 {
   "name": "@pollinginc/polling-react-sdk",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "React JS SDK Wrapper to intereact with Polling.com services",
   "type": "module",
   "main": "dist/index.esm.js",
@@ -13,13 +13,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.3.12",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "esbuild-node-externals": "^1.15.0",
     "react": "^18.3.1",
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@pollinginc/polling-sdk-js": "^1.0.6"
+    "@pollinginc/polling-sdk-js": "^1.1.0"
   },
   "repository": {
     "type": "git",
